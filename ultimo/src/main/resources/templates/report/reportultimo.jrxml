@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.1.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="practica" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38af3017-5144-4c39-9ddf-38469e07ab60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="sueldomensual" class="java.lang.String"/>
+	<parameter name="primaantiguedad" class="java.lang.String"/>
+	<parameter name="primaalojamiento" class="java.lang.String"/>
+	<parameter name="primanavidad" class="java.lang.String"/>
+	<parameter name="vacaciones" class="java.lang.String"/>
+	<parameter name="primavacaciones" class="java.lang.String"/>
+	<parameter name="bonificaciondiciembre" class="java.lang.String"/>
+	<parameter name="bonificacionjulio" class="java.lang.String"/>
+	<parameter name="retroactivo" class="java.lang.String"/>
+	<parameter name="primasemestral" class="java.lang.String"/>
+	<parameter name="senoroseñorados" class="java.lang.String"/>
+	<parameter name="encargadotalentohumano" class="java.lang.String"/>
+	<parameter name="ImageDir" class="java.lang.String"/>
+	<parameter name="datos_del_certificado" class="java.lang.String"/>
+	<parameter name="codigo_derecho" class="java.lang.String"/>
+	<parameter name="codigo_izquierdo" class="java.lang.String"/>
+	<parameter name="concecutivo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="CURRENT_PAGE_NUMBER" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<columnHeader>
+		<band height="107" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="50" y="70" width="100" height="20" uuid="2fee4073-4532-41c0-b398-e575baafa52d"/>
+				<text><![CDATA[– (FUSAGASUGÁ) –]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement x="10" y="10" width="180" height="50" uuid="a54ce18a-d2a1-460e-acf9-887ed9a396f8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{ImageDir}+ "LogoUdec.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="460" y="20" width="100" height="30" forecolor="rgba(0, 0, 0, 0.5686275)" uuid="f874d7ab-9c20-4c0b-a782-a0cdce57d401"/>
+				<textFieldExpression><![CDATA[$P{codigo_derecho}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="90" width="100" height="15" uuid="946468c3-03c5-4904-8bf0-847b6eba3f61">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{codigo_izquierdo}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="460" y="60" width="100" height="20" forecolor="rgba(0, 0, 0, 0.5686275)" uuid="74482ed3-a938-45b7-ab3e-9c7072b6a220"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA["de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="60" width="95" height="20" forecolor="rgba(0, 0, 0, 0.5686275)" uuid="4ea17d2d-ac23-432a-858d-6b1a184bddff"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="232" y="55" width="100" height="19" uuid="e0a613bb-4d4a-40ec-ae10-da3df8260ad2"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C E R T I F I C A:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="20" width="194" height="30" uuid="16e6ed9b-8a17-4250-9cf4-cc3e36f6381e"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA DIRECTORA DE TALENTO HUMANO
+DE LA UNIVERSIDAD DE CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="0" width="130" height="15" uuid="e7fe2da7-1c9e-492b-a92c-6d64fd315a00">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Fusagasugá, Cundinamarca]]></text>
+			</staticText>
+		</band>
+		<band height="22">
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="ElementGroupHeight" x="65" y="0" width="425" height="14" uuid="9b198884-77bf-46bf-ac7f-82c35b9be6ec"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$P{datos_del_certificado}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<staticText>
+				<reportElement x="60" y="35" width="100" height="15" uuid="11083977-1cdd-47e8-8956-e82805b254b0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Sueldo mensual:    ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="10" width="199" height="15" uuid="62b6f45c-a282-46ff-abc6-f853fe741c06">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[En el presente año viene devengando:
+            ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="347" y="34" width="138" height="15" uuid="d976a043-2978-4766-82ad-f070be40426f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sueldomensual}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<staticText>
+				<reportElement x="60" y="0" width="152" height="15" uuid="96d941a3-0b8d-4e2a-a5ff-16cac170a894">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Prima mensual de Antigüedad:  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="347" y="-1" width="138" height="15" uuid="43e16d2f-f882-46bf-a597-51cbfa4fa898">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primaantiguedad}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16">
+			<textField>
+				<reportElement x="347" y="-1" width="138" height="15" uuid="c166f92c-734f-4fc1-99dc-0a8b77d30061">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primaalojamiento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="150" height="15" uuid="e815f03a-3dff-4c32-9c8d-5e657c6ee6b0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Prima mensual de Alojamiento:   ]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<textField>
+				<reportElement x="348" y="0" width="138" height="15" uuid="7e6775a7-8304-4f22-b7fc-97fd12c836c3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primanavidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="152" height="15" uuid="8422d579-af18-4ff1-8340-1b2d3968d9f2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Prima de Navidad (diciembre):  ]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<textField>
+				<reportElement x="348" y="0" width="138" height="15" uuid="a4518a51-7dd8-4c2b-8371-a22b61cb7ee7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vacaciones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="155" height="15" uuid="738af6be-62d9-40fe-b6d2-0cb6930da112">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[ Vacaciones (diciembre):]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<staticText>
+				<reportElement x="60" y="0" width="229" height="15" uuid="e5b9b154-1b28-4982-a45e-240578c3eb57">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Prima de Vacaciones(diciembre): ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="347" y="0" width="138" height="15" uuid="090195fb-9000-4619-864b-8e97e7b51076">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primavacaciones}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField>
+				<reportElement x="347" y="0" width="138" height="15" uuid="1d9b1870-493b-4053-b917-754a49c5ea13">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bonificaciondiciembre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="230" height="15" uuid="03c2045b-714e-4ebc-8d8a-9d2ae19f4906">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Bonificación anual por Recreación(diciembre): ]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<textField>
+				<reportElement x="347" y="0" width="138" height="15" uuid="e5c77d7c-bb26-4027-b052-52e8f83d1fe9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bonificacionjulio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="239" height="15" uuid="33f19d35-00c6-412b-839d-27e4e756bbd1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Bonificación anual por servicios prestados (julio):  ]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<textField>
+				<reportElement x="347" y="0" width="138" height="15" uuid="88ffa3f7-67c4-471e-8cd1-7f543429a94b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{retroactivo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="239" height="15" uuid="12a218f0-4f8c-434c-8a3b-ef02f442f2df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Retroactivo Vacaciones (junio):  ]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<textField>
+				<reportElement x="347" y="0" width="138" height="15" uuid="087451ef-6626-4aec-8316-b921df8ce968">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primasemestral}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="239" height="15" uuid="791f71b8-283d-4c84-8950-593b50e190f4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Prima Semestral de Servicio(julio):   ]]></text>
+			</staticText>
+		</band>
+		<band height="84">
+			<staticText>
+				<reportElement x="180" y="50" width="185" height="20" uuid="0be4263b-9c18-4f97-a5b3-333992bba7bb">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Director(a) de Talento Humano]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="155" y="20" width="245" height="30" uuid="8e5a08e2-5599-48e7-b605-0a65ad005b30">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{encargadotalentohumano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="425" height="12" uuid="6bdce8f9-d778-4301-91f9-5e9b56e47582">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{senoroseñorados}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="90">
+			<staticText>
+				<reportElement x="102" y="0" width="350" height="50" uuid="3571f381-8513-4b4a-aa3f-936d5ea3ba09"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Diagonal 18 No. 20-29 Fusagasugá – Cundinamarca 
+ Teléfono: (601) 8281483 Línea Gratuita: 018000180414 
+www.ucundinamarca.edu.co E-mail: info@ucundinamarca.edu.co
+ NIT: 890.680.062-2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="50" width="414" height="30" uuid="4b674ed9-d33e-45bf-b98c-71472bf6eeca"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Documento controlado por el Sistema de Gestión de la Calidad
+Asegúrese que corresponde a la última versión consultando el Portal Institucional]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="50" width="140" height="20" uuid="3d864259-be20-415a-8f83-646095523edf"/>
+				<textFieldExpression><![CDATA[$P{concecutivo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

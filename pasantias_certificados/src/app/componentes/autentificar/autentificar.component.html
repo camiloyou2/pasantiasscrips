@@ -1,0 +1,147 @@
+
+<style>
+    img {
+        width: 200px;
+        height: auto;
+    }
+
+    .cabezera {
+        width: 100%;
+        height: auto;
+        background-color: #0E3D38;
+        display: flex;
+        justify-content: space-between;
+        padding: 3px 10px;
+    }
+
+    .cabezera div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+
+    }
+
+    .cabezera div img {
+        width: 50px;
+        height: auto;
+    }
+
+    #titulo {
+        width: 50%;
+        background-color: #E5E5E5;
+        padding: 5px;
+        text-align: center;
+        border-radius: 3px;
+        outline: 1px solid #c0c0c0;
+        margin-bottom: 10px;
+    }
+
+    .error {
+        padding: 10px;
+        text-align: center;
+        color: rgb(216, 35, 35);
+
+    }
+
+    #uno {
+        background-color: #0E3D38;
+        margin-right: 10px;
+        position: relative;
+        top: 10px;
+        filter: grayscale(0%);
+        border-radius: 50%;
+    }
+
+    form {
+
+        width: 45%;
+        max-width: 400px;
+    }
+
+    .contenedor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0px;
+
+    }
+
+    .centrar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div id="login">
+    <div class="cabezera">
+        <div>
+            <img id="uno" src="../assets/img/LogoUdec.png" alt="">
+            <p>SISTEMA DE CERTIFICADOS</p>
+        </div>
+        <div>
+            <img src="../assets/img/icono.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="contenedor">
+        <p id="titulo">INGRESO -SISTEMA DE CERTIFICADOS</p>
+        <form [formGroup]="formulariologin">
+
+            <div class="form-group centrar">
+                <label>Tipo de Documento</label>
+
+                <input formControlName="tipo_de_documento" list="tipos_de_documentos" required class="form-control">
+
+                <datalist id="tipos_de_documentos">
+
+                    <option value="CE">
+                    <option value="PAS">
+                    <option value="CC">
+
+
+                </datalist>
+            </div>
+
+            <div class="form-group centrar">
+                <label for="exampleInputEmail1">Fecha de expedicion</label>
+                <input type="date" formControlName="fecha_de_expedicion" required class="form-control">
+            </div>
+
+            <div class="form-group centrar">
+                <label for="exampleInputEmail1">Numero de Documento</label>
+                <input type="text" formControlName="cedula" required class="form-control">
+            </div>
+
+            <div class="form-group centrar">
+                <label for="exampleInputEmail1">Codigo</label>
+                <input type="text" formControlName="Codigo" required class="form-control">
+            </div>
+            <div class="form-group centrar">
+                <button (click)="verificar_login_ultimo()" type="button" class="btn btn-success">NGRESAR</button>
+            </div>
+
+            <div class="error" *ngIf="mensaje_error == 'datos_erroneos'">datos_erroneos</div>
+            <div class="error" *ngIf="mensaje_error == 'capcha'">capcha</div>
+            <div class="error" *ngIf="mensaje_error == ''"></div>
+
+            <div class="form-group centrar">
+                <img src="{{'data:image/jpeg;base64,'+ codigoCapcha[0].imageBytes}}" alt="">
+            </div>
+
+
+        </form>
+
+    </div>
+
+  
+</div>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.1.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="practica" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38af3017-5144-4c39-9ddf-38469e07ab60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="ImageDir" class="java.lang.String"/>
+	<parameter name="datos_del_certificado" class="java.lang.String"/>
+	<parameter name="especificaciones_del_cargo" class="java.lang.String"/>
+	<parameter name="nombre_del_solicitante" class="java.lang.String"/>
+	<parameter name="codigo_derecho" class="java.lang.String"/>
+	<parameter name="codigo_izquierdo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<columnHeader>
+		<band height="95">
+			<image onErrorType="Blank">
+				<reportElement x="0" y="0" width="180" height="50" uuid="a54ce18a-d2a1-460e-acf9-887ed9a396f8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{ImageDir}+ "LogoUdec.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="40" y="60" width="100" height="20" uuid="2fee4073-4532-41c0-b398-e575baafa52d"/>
+				<text><![CDATA[– (FUSAGASUGÁ) –]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement x="450" y="10" width="100" height="30" forecolor="rgba(0, 0, 0, 0.59607846)" uuid="390bf2bb-3759-462d-a0e4-31b3a72c1c23"/>
+				<textFieldExpression><![CDATA[$P{codigo_derecho}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="80" width="100" height="15" uuid="87e77fce-57dd-42d6-b42c-25e0aa6ddb96">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{codigo_izquierdo}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="460" y="60" width="100" height="20" forecolor="rgba(0, 0, 0, 0.59607846)" uuid="74482ed3-a938-45b7-ab3e-9c7072b6a220"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA["de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="60" width="95" height="20" forecolor="rgba(0, 0, 0, 0.59607846)" uuid="4ea17d2d-ac23-432a-858d-6b1a184bddff"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="96" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="180" y="30" width="194" height="30" forecolor="#030303" uuid="44c3a62f-805c-4870-ac13-d185cab1ee70"/>
+				<box>
+					<pen lineColor="#D62E2B"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA DIRECTORA DE TALENTO HUMANO
+DE LA UNIVERSIDAD DE CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="70" width="100" height="19" uuid="65f52423-77f9-4656-8700-fc5fe721716a"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C E R T I F I C A:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="5" width="160" height="15" uuid="e7fe2da7-1c9e-492b-a92c-6d64fd315a00">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Fusagasugá, Cundinamarca]]></text>
+			</staticText>
+		</band>
+		<band height="30">
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="ElementGroupHeight" x="80" y="0" width="400" height="19" uuid="9b198884-77bf-46bf-ac7f-82c35b9be6ec"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$P{datos_del_certificado}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="49">
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="ElementGroupHeight" x="80" y="20" width="400" height="19" uuid="b3b23297-f93d-44ef-91e8-8af7324e5099"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$P{especificaciones_del_cargo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="35">
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="ElementGroupHeight" x="80" y="10" width="400" height="19" uuid="0d253b29-4ad0-4881-a899-2ae4aa27b492"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$P{nombre_del_solicitante}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="118">
+			<staticText>
+				<reportElement x="35" y="75" width="142" height="20" uuid="91117ddd-bdb7-474d-8147-e1a7ffc19dbd"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Elaboró y/o Transcriptor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="97" width="100" height="14" uuid="15c4cfdf-4b57-4046-9219-2b2eb15f40f4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[33-28.6.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="55" width="185" height="20" uuid="0be4263b-9c18-4f97-a5b3-333992bba7bb">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Director(a) de Talento Humano]]></text>
+			</staticText>
+			<line>
+				<reportElement x="180" y="50" width="213" height="1" uuid="0c0b0695-ab88-4777-8ae6-8165334ed108"/>
+			</line>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="28" y="10" width="498" height="30" uuid="0425a4b3-7199-4170-bed8-5222e578d3be"/>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Para confirmar éste certificado, puede comunicarse a: certificacionesth@ucundinamarca.edu.co  talentohumanoaunclic@ucundinamarca.edu.co]]></text>
+			</staticText>
+		</band>
+		<band height="50">
+			<staticText>
+				<reportElement x="28" y="10" width="500" height="30" uuid="8e81b162-8d47-4592-8f9f-d28e60416e25"/>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Nota: las certificaciones deben contener todos los contratos discriminados por fecha de inicio y terminación]]></text>
+			</staticText>
+		</band>
+		<band height="1"/>
+	</detail>
+	<pageFooter>
+		<band height="90">
+			<staticText>
+				<reportElement x="103" y="0" width="350" height="60" uuid="3571f381-8513-4b4a-aa3f-936d5ea3ba09"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Diagonal 18 No. 20-29 Fusagasugá – Cundinamarca 
+ Teléfono: (601) 8281483 Línea Gratuita: 018000180414 
+www.ucundinamarca.edu.co E-mail: info@ucundinamarca.edu.co
+ NIT: 890.680.062-2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="40" width="464" height="30" uuid="5d391695-f036-489b-9721-6c2e2f157ebb"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Documento controlado por el Sistema de Gestión de la Calidad
+Asegúrese que corresponde a la última versión consultando el Portal Instituciona]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

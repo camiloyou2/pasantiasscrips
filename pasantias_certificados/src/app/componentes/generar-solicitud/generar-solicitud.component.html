@@ -1,0 +1,331 @@
+<style>
+   .aside{
+        width: 85%;
+        position: relative;
+     display: flex;
+ 
+     flex-direction: column;
+
+          }
+  
+/* inicio de cabezera */
+.head{
+    padding: 5px 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #0E3D38;
+}
+.head  h3 {
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+    }  
+.head  img {
+        width: 50px;
+        height: auto;
+    }
+         /* inicio  menu  */
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+                }
+ 
+    .menu ul{
+        list-style: none;
+            }
+    .menu ul li a{
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        color: #0E3D38;
+        text-decoration: none;
+                  }
+    .menu ul li label{
+        color: #0E3D38;
+    }
+    .menu ul li .vector{
+        width: 15px;
+        height: auto;
+        margin-right: 8px;
+                        }
+
+    .menu ul ul{
+        height: 0;
+        overflow: hidden;
+        transition: 0.8s;
+ 
+                }   
+    .menu{
+        width: 300px;
+        height: 100%;
+        
+        }                 
+    .contenido {
+        display: none;
+               }
+    #miCheckbox{
+        display: none;
+            }
+/* Muestra el contenido si el checkbox está marcado */
+    #miCheckbox:checked + label + .ul {
+        height: 72px;
+                                      }
+    ul li .ul {
+        height: 0;
+        overflow: hidden;
+        transition: 0.8s;
+              } 
+    .felx-row{
+        display: flex;
+        flex-direction: row;
+             }
+              /* fin  menu  */
+                 /* datos de la imagen  */
+              /* datos de la imagen  */
+      .datos_img{
+             
+             display: flex;
+             flex-direction: row;
+             padding: 10px;
+height: auto;
+   align-items: center;
+
+           }
+           .datos_img img{
+             width: 65px ;
+             height: 65px;
+              border-radius: 10%;
+
+           }
+           .datos_img p{
+  
+    
+
+          font-size: 13px;
+
+        
+           }
+           #menucabezera{
+             width: 100%;
+             height: auto;
+             margin: 20px 0px;
+          
+           }
+           #menucabezera ul{
+            display: flex;
+   
+            justify-content:flex-start;
+            align-items:center;
+height: 100%;
+            
+           }
+           #menucabezera ul li{
+             text-decoration: none;
+             list-style: none;
+             margin: 0px 15px 0px 0px;
+        
+             padding: 10px 10px;
+           
+           
+           }
+           #menucabezera ul li a{
+             color: rgba(0, 0, 0, 0.514);
+           }
+           #menucabezera ul li a:hover{
+            text-decoration: none;
+           }
+           .activate{
+             border: 1px solid rgba(196, 196, 196, 0.5);
+             border-radius: 10px 10px 1px 1px;
+            
+           }.acciones{
+           
+            display: flex;
+            justify-content:space-evenly;
+          
+           
+           }
+              
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ 
+<div class="head" >
+
+
+    <h3>SISTEMA DE CERTIFICADOS</h3>
+    
+        <img src="../assets/img/icono.png" alt="">
+    
+    </div>
+<div class="contenedor">
+
+    <nav class="menu">
+
+        <div *ngFor="let item of datosPersonales " class="datos_img">
+            <img id="imagen_usuario"
+                src="{{'data:image/'+item.pgfo_EXTENSION+';base64,'+ item.pgfo_ARCHIVO}}" alt="imagen">
+            <p>{{item.peng_primernombre}} {{item.peng_segundonombre}}
+                {{item.peng_primerapellido}} {{item.peng_segundoapellido}} </p>
+        </div>
+
+
+
+        <ul>
+        
+            <li>
+              <a routerLink="../Solicitudes">  <img src="../../../assets/img/image.png" alt=""  class="vector"> Generar Solicitud</a>
+            </li>
+          
+            <li>
+                 <a routerLink="../GenerarSolicitud"> <img src="../../../assets/img/image.png" alt="" class="vector"> Visualizar Pendientes</a>
+            </li>
+          
+            <li>
+                  <a routerLink="../Solicitudes_realizadas"> <img src="../../../assets/img/image.png" alt="" class="vector">Mis Solicitudes</a>
+            </li>
+            
+        </ul>
+    </nav>
+    <style>
+        .form_div{
+          
+            width: 98%;
+          
+        }
+    </style>
+    <div class="aside">
+        <div id="menucabezera">
+   
+            <ul><li >  <a routerLink="../Solicitudes">Generar Solicitud</a> </li>  <li class="activate">  <a routerLink="../GenerarSolicitud">Visualizar Pendiente</a> </li>   <li >  <a routerLink="../Solicitudes_realizadas">Mis Solicitudes</a> </li> </ul>
+        </div>
+         
+            <div class="form_div">
+                <table datatable [dtOptions]="dtOptions" class="row-border hover" [dtTrigger]="dtTrigger">
+                    <thead>
+                        <tr>
+                            <th>Tipo de Solicitud</th>
+                            <th>Fecha</th>
+          
+                            <th>Estado</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of solicitudVisualizar ">
+            
+            
+            
+                            <td>{{item.serv_nombre}}</td>
+                            <td>{{item.soli_fechasolicitud}}</td>
+                   
+                         
+                            
+                            <td >
+                            
+                                <div *ngIf="item.sose_atendido == '0' ;else elseBlock ">N0 ATENDIDO</div>
+                                <ng-template #elseBlock>
+                                    ATENDIDO
+                                </ng-template>
+                            
+                            </td>
+                       
+    
+                            <td class="acciones" >
+                               
+                                    <button type="button" (click)="mostrar(item.soliid, item.identificador , item.serv_nombre)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Más</button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                        Validar
+                                      </button>
+                              
+                                
+                                  
+                                  <!-- Modal -->
+                                  <div class="modal fade"  id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Importante</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          si selecciona aprovar la solicitud estara lista 
+                                        </div>
+                                        <div class="modal-footer">
+                                            
+                                          <button data-bs-dismiss="modal"  (click)="ModificarEstado(item.soliid)"   type="button" class="btn btn-primary">aprovar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Datos De Solicitud</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form>
+                                        
+                                        <div class="form-group" *ngFor="let x of ObservarSolicitudM " >
+                                            <label for="recipient-name" class="col-form-label">Correo Electonico:</label>
+                                            <input type="text" class="form-control" id="recipient-name" placeholder={{x.correo}}>
+                                          </div>
+                                          <div class="form-group" *ngFor="let x of ObservarSolicitudM " >
+                                            <label for="recipient-name" class="col-form-label">Núm:</label>
+                                            <input type="text" class="form-control" id="recipient-name" placeholder={{x.doc}}>
+                                          </div>
+                                          <div class="form-group" *ngFor="let x of ObservarSolicitudM " >
+                                            <label for="recipient-name" class="col-form-label">Nombre:</label>
+                                            <input type="text" class="form-control" id="recipient-name" placeholder={{x.nombre}}>
+                                          </div>
+                                      <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Tipo de Certificado:</label>
+                                        <input type="text" class="form-control" id="recipient-name" placeholder={{item.serv_nombre}}>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Fecha de Solicitud:</label>
+                                        <input type="text" class="form-control" id="recipient-name" placeholder={{item.soli_fechasolicitud}}>
+                                      </div> <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                        <input type="text" class="form-control" id="recipient-name" placeholder={{item.rangoFecha}}>
+                                      </div> 
+                                     
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    
+                                   <!-- Button trigger modal -->
+
+                                     
+                                
+                                    <a  *ngFor="let x of ObservarSolicitudM "  href="{{'data:application/pdf;base64,'+ x.pdfBytes }}" target="_blank" type="button" class="btn btn-primary"><img src="../../../assets/img/ojo.png" alt=""></a>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            </td>
+                           
+    
+    
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+       
+
+    </div>
+
+    
+    
+</div>
